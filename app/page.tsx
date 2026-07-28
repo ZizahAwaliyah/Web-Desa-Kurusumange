@@ -1,18 +1,17 @@
-import { supabase } from '@/lib/supabase' 
+import HeroSection from '@/components/sections/HeroSection'
+import SambutanSection from '@/components/sections/SambutanSection'
+import GaleriPotensiSection from '@/components/sections/GaleriPotensiSection'
+import BeritaHomeSection from '@/components/sections/BeritaHomeSection'
+import AksesLayananSection from '@/components/sections/AksesLayananSection'
 
-export default async function Home() {
-  const { data, error } = await supabase
-    .from('statistik_desa')
-    .select('*')
-
-  if (error) {
-    return <div>Error: {error.message}</div>
-  }
-
+export default function Home() {
   return (
-    <div style={{ padding: '2rem' }}>
-      <h1>Test Koneksi Supabase</h1>
-      <pre>{JSON.stringify(data, null, 2)}</pre>
+    <div>
+      <HeroSection />
+      <SambutanSection />
+      <GaleriPotensiSection />
+      <BeritaHomeSection />
+      <AksesLayananSection />
     </div>
   )
 }
