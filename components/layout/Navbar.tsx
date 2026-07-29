@@ -31,7 +31,7 @@ const menuItems = [
     href: '/transparansi-anggaran',
     dropdown: [
       { label: 'Anggaran', href: '/transparansi-anggaran' },
-      { label: 'Realisasi Program', href: '/transparansi-anggaran#realisasi' },
+      { label: 'Realisasi Program', href: '/transparansi-anggaran/realisasi' },
     ],
   },
   { label: 'Berita', href: '/berita' },
