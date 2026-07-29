@@ -20,7 +20,7 @@ const layananCepat = [
     iconBg: 'bg-blue-100 text-blue-700',
     judul: 'Informasi Publik',
     deskripsi: 'Ketahui informasi publik yang dikecualikan',
-    href: '/ppid',
+    href: '/ppid/daftar-informasi',
   },
   {
     icon: BarChart3,

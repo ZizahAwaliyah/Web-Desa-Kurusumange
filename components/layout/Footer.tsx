@@ -36,7 +36,7 @@ export default function Footer() {
           <ul className="space-y-2 text-sm text-gray-700">
             <li><a href="/transparansi-anggaran">Transparansi Anggaran</a></li>
             <li><a href="/layanan">Layanan Surat</a></li>
-            <li><a href="/ppid">Informasi Publik</a></li>
+            <li><a href="/ppid/daftar-informasi">Informasi Publik</a></li>
             <li><a href="/infografik">Data & Infografis</a></li>
           </ul>
         </div>

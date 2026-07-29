@@ -5,12 +5,35 @@ import { useState } from 'react'
 import { ChevronDown } from 'lucide-react'
 
 const menuItems = [
-  { label: 'Profil Desa', href: '/profil', dropdown: ['Sejarah', 'Visi Misi', 'Struktur Organisasi'] },
+  {
+    label: 'Profil',
+    href: '/profil',
+    dropdown: [
+      { label: 'Profil Desa', href: '/profil' },
+      { label: 'Struktur Organisasi', href: '/profil/struktur-organisasi' },
+    ],
+  },
   { label: 'Layanan', href: '/layanan' },
   { label: 'Infografik', href: '/infografik' },
   { label: 'Potensi', href: '/potensi-desa' },
-  { label: 'PPID', href: '/ppid', dropdown: ['Berkala', 'Setiap Saat', 'Serta Merta'] },
-  { label: 'Transparansi', href: '/transparansi-anggaran', dropdown: ['Anggaran', 'Realisasi Program'] },
+  {
+  label: 'PPID',
+  href: '/ppid',
+  dropdown: [
+    { label: 'Profil PPID', href: '/ppid/profil' },
+    { label: 'Struktur Organisasi', href: '/ppid/struktur-organisasi' },
+    { label: 'Daftar Informasi', href: '/ppid/daftar-informasi' },
+    { label: 'Alur Permohonan Informasi', href: '/ppid/alur-permohonan' },
+  ],
+},
+  {
+    label: 'Transparansi',
+    href: '/transparansi-anggaran',
+    dropdown: [
+      { label: 'Anggaran', href: '/transparansi-anggaran' },
+      { label: 'Realisasi Program', href: '/transparansi-anggaran#realisasi' },
+    ],
+  },
   { label: 'Berita', href: '/berita' },
 ]
 
@@ -19,7 +42,7 @@ export default function Navbar() {
 
   return (
     <header className="border-b border-black bg-white">
-    <div className="max-w-7xl mx-auto flex items-center justify-between px-8 py-4">
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-8 py-4">
         <Link href="/" className="flex items-center gap-2">
           <img src="/logo maros.png" alt="Logo Desa Kurusumange" className="h-10 w-10" />
           <span className="font-bold text-lg text-green-900">Desa Kurusumange</span>
@@ -39,12 +62,18 @@ export default function Navbar() {
               </Link>
 
               {item.dropdown && openDropdown === item.label && (
-                <div className="absolute top-full left-0 mt-2 w-48 bg-white border rounded-lg shadow-lg py-2 z-50">
-                  {item.dropdown.map((sub) => (
-                    <a key={sub} href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
-                      {sub}
-                    </a>
-                  ))}
+                <div className="absolute top-full left-0 pt-2 w-56 z-50">
+                  <div className="bg-white border rounded-lg shadow-lg py-2">
+                    {item.dropdown.map((sub) => (
+                      <Link
+                        key={sub.label}
+                        href={sub.href}
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      >
+                        {sub.label}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
               )}
             </div>
