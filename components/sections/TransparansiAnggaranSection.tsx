@@ -1,13 +1,17 @@
-'use client'
-
-import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts'
 import { Clock, Download, FileText } from 'lucide-react'
-import { anggaranInfo, realisasiProgram, dokumenPublikAnggaran } from '@/data/anggaran'
+import { supabase } from '@/lib/supabase'
+import { anggaranInfo, realisasiProgram } from '@/data/anggaran'
+import AlokasiChart from '@/components/anggaran/AlokasiChart'
 
-export default function TransparansiAnggaranSection() {
+export default async function TransparansiAnggaranSection() {
+  const { data: dokumenAnggaran } = await supabase
+    .from('dokumen_ppid')
+    .select('*')
+    .eq('terkait_anggaran', true)
+    .order('tahun', { ascending: false })
+
   return (
     <div className="max-w-4xl mx-auto px-6 py-12">
-      {/* Header */}
       <div className="text-center mb-10">
         <span className="inline-block bg-blue-100 text-blue-700 text-xs font-semibold px-4 py-1.5 rounded-full mb-4">
           APBDes {anggaranInfo.tahun}
@@ -20,30 +24,11 @@ export default function TransparansiAnggaranSection() {
         </p>
       </div>
 
-      {/* Alokasi Dana */}
       <div className="border rounded-2xl p-6 md:p-8 grid md:grid-cols-2 gap-8 items-center mb-8">
         <div>
           <h2 className="text-xl font-bold mb-1">Alokasi Dana APBDes {anggaranInfo.tahun}</h2>
           <p className="text-gray-500 text-sm mb-6">Visualisasi sumber dan alokasi dana tahun berjalan.</p>
-
-          <div className="relative h-56">
-            <ResponsiveContainer width="100%" height="100%">
-              <PieChart>
-                <Pie
-                  data={anggaranInfo.alokasi}
-                  dataKey="persen"
-                  nameKey="label"
-                  innerRadius={65}
-                  outerRadius={100}
-                  paddingAngle={2}
-                >
-                  {anggaranInfo.alokasi.map((entry, i) => (
-                    <Cell key={i} fill={entry.warna} />
-                  ))}
-                </Pie>
-              </PieChart>
-            </ResponsiveContainer>
-          </div>
+          <AlokasiChart />
         </div>
 
         <div>
@@ -67,7 +52,6 @@ export default function TransparansiAnggaranSection() {
         </div>
       </div>
 
-      {/* Realisasi Program */}
       <div className="border rounded-2xl p-6 md:p-8 mb-8">
         <div className="flex items-center justify-between mb-6 flex-wrap gap-3">
           <div>
@@ -88,7 +72,17 @@ export default function TransparansiAnggaranSection() {
                   <p className="text-gray-500 text-xs">{program.deskripsi}</p>
                 </div>
                 <div className="text-right">
-                  <p className="font-bold" style={{ color: program.persen === 100 ? '#166534' : program.persen >= 70 ? '#1d4ed8' : '#ca8a04' }}>
+                  <p
+                    className="font-bold"
+                    style={{
+                      color:
+                        program.persen === 100
+                          ? '#166534'
+                          : program.persen >= 70
+                          ? '#1d4ed8'
+                          : '#ca8a04',
+                    }}
+                  >
                     {program.persen}%
                   </p>
                   <p className="text-gray-400 text-xs">Selesai</p>
@@ -105,49 +99,51 @@ export default function TransparansiAnggaranSection() {
         </div>
       </div>
 
-      {/* Dokumen Publik */}
       <div className="border rounded-2xl overflow-hidden">
         <div className="p-6 border-b">
           <h2 className="text-xl font-bold">Dokumen Publik</h2>
           <p className="text-gray-500 text-sm">Unduh dokumen perencanaan dan laporan resmi pemerintah desa.</p>
         </div>
 
-        <table className="w-full text-sm">
-          <thead className="bg-gray-50 text-left text-gray-500">
-            <tr>
-              <th className="px-6 py-3 font-medium">Nama Dokumen</th>
-              <th className="px-6 py-3 font-medium">Tahun</th>
-              <th className="px-6 py-3 font-medium">Ukuran</th>
-              <th className="px-6 py-3 font-medium">Aksi</th>
-            </tr>
-          </thead>
-          <tbody>
-            {dokumenPublikAnggaran.map((doc) => (
-              <tr key={doc.nama} className="border-t">
-                <td className="px-6 py-4">
-                  <div className="flex items-start gap-2">
-                    <FileText size={16} className="text-red-500 mt-0.5" />
-                    <div>
-                      <p className="font-medium">{doc.nama}</p>
-                      <p className="text-gray-400 text-xs">{doc.sub}</p>
-                    </div>
-                  </div>
-                </td>
-                <td className="px-6 py-4 text-gray-500">{doc.tahun}</td>
-                <td className="px-6 py-4 text-gray-500">{doc.ukuran}</td>
-                <td className="px-6 py-4">
-                  <a
-                    href={doc.file}
-                    download
-                    className="flex items-center gap-1.5 border rounded-lg px-3 py-1.5 text-xs font-medium hover:bg-gray-50 w-fit"
-                  >
-                    <Download size={13} /> Unduh
-                  </a>
-                </td>
+        {dokumenAnggaran && dokumenAnggaran.length > 0 ? (
+          <table className="w-full text-sm">
+            <thead className="bg-gray-50 text-left text-gray-500">
+              <tr>
+                <th className="px-6 py-3 font-medium">Nama Dokumen</th>
+                <th className="px-6 py-3 font-medium">Tahun</th>
+                <th className="px-6 py-3 font-medium">Aksi</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {dokumenAnggaran.map((doc) => (
+                <tr key={doc.id} className="border-t">
+                  <td className="px-6 py-4">
+                    <div className="flex items-start gap-2">
+                      <FileText size={16} className="text-red-500 mt-0.5" />
+                      <p className="font-medium">{doc.nama_dokumen}</p>
+                    </div>
+                  </td>
+                  <td className="px-6 py-4 text-gray-500">{doc.tahun || '-'}</td>
+                  <td className="px-6 py-4">
+                    {doc.file_url ? (
+                      <a
+                        href={doc.file_url}
+                        download
+                        className="flex items-center gap-1.5 border rounded-lg px-3 py-1.5 text-xs font-medium hover:bg-gray-50 w-fit"
+                      >
+                        <Download size={13} /> Unduh
+                      </a>
+                    ) : (
+                      <span className="text-gray-500 text-xs">Tidak ada file</span>
+                    )}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        ) : (
+          <p className="text-center text-gray-500 py-10">Belum ada dokumen terkait anggaran.</p>
+        )}
       </div>
     </div>
   )

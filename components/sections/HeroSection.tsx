@@ -55,7 +55,7 @@ export default function HeroSection() {
             <FileText size={18} />
             Profil Desa
           </a>
-          <a href="/ppid" className="flex items-center gap-2 border border-white text-white font-medium px-5 py-2.5 rounded-lg hover:bg-white/10">
+          <a href="/ppid/daftar-informasi" className="flex items-center gap-2 border border-white text-white font-medium px-5 py-2.5 rounded-lg hover:bg-white/10">
             Informasi Publik
             <ArrowRight size={18} />
           </a>

@@ -35,6 +35,7 @@ const menuItems = [
     ],
   },
   { label: 'Berita', href: '/berita' },
+  { label: 'Galeri', href: '/galeri' },
 ]
 
 export default function Navbar() {
