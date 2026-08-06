@@ -10,6 +10,8 @@ const kategoriColor: Record<string, string> = {
   'Serta Merta': 'bg-orange-100 text-orange-700',
 }
 
+export const dynamic = 'force-dynamic'
+
 export default async function AdminPpidPage() {
   const { data } = await supabase
     .from('dokumen_ppid')

@@ -3,6 +3,8 @@ import Link from 'next/link'
 import { Newspaper, FileText, Images, Plus } from 'lucide-react'
 import StatCard from '@/components/admin/ui/StatCard'
 
+export const dynamic = 'force-dynamic'
+
 export default async function DashboardPage() {
   const { count: totalBerita } = await supabase
     .from('berita')

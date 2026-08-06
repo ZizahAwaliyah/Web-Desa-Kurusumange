@@ -5,6 +5,7 @@ import BeritaHomeSection from '@/components/sections/BeritaHomeSection'
 import SaranaPrasaranaSection from '@/components/sections/SaranaPrasaranaSection'
 import AksesLayananSection from '@/components/sections/AksesLayananSection'
 
+export const dynamic = 'force-dynamic'
 
 export default function Home() {
   return (

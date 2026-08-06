@@ -4,6 +4,8 @@ import { Plus, Pencil, Images } from 'lucide-react'
 import DeleteGaleriButton from '@/components/admin/DeleteGaleriButton'
 import EmptyState from '@/components/admin/ui/EmptyState'
 
+export const dynamic = 'force-dynamic'
+
 export default async function AdminGaleriPage() {
   const { data } = await supabase
     .from('galeri')

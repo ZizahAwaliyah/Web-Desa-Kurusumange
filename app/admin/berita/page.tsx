@@ -4,6 +4,8 @@ import { Plus, Pencil, Newspaper } from 'lucide-react'
 import DeleteBeritaButton from '@/components/admin/DeleteBeritaButton'
 import EmptyState from '@/components/admin/ui/EmptyState'
 
+export const dynamic = 'force-dynamic'
+
 export default async function AdminBeritaPage() {
   const { data } = await supabase
     .from('berita')
