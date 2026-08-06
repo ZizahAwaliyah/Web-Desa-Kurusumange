@@ -21,7 +21,7 @@ export default function HeroSection() {
 
   return (
     <div className="max-w-7xl mx-auto px-6 mt-6">
-    <section className="relative rounded-3xl overflow-hidden mx-6 mt-6 min-h-[500px] flex flex-col justify-center px-10">
+    <section className="relative rounded-3xl overflow-hidden min-h-[500px] flex flex-col justify-center px-10">
       {/* Background foto yang berganti-ganti */}
       {backgroundImages.map((img, index) => (
         <div

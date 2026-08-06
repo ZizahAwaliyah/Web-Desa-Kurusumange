@@ -21,9 +21,15 @@ export default function DeleteBeritaButton({ id, gambarUrl }: { id: number; gamb
       if (path) await supabase.storage.from('desa-assets').remove([path])
     }
 
-    await supabase.from('berita').delete().eq('id', id)
+    const { error } = await supabase.from('berita').delete().eq('id', id)
 
     setLoading(false)
+
+    if (error) {
+      alert(`Gagal menghapus berita: ${error.message}`)
+      return
+    }
+
     router.refresh()
   }
 

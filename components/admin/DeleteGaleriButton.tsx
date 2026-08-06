@@ -18,9 +18,15 @@ export default function DeleteGaleriButton({ id, gambarUrl }: { id: number; gamb
     const path = gambarUrl.split('/desa-assets/')[1]
     if (path) await supabase.storage.from('desa-assets').remove([path])
 
-    await supabase.from('galeri').delete().eq('id', id)
+    const { error } = await supabase.from('galeri').delete().eq('id', id)
 
     setLoading(false)
+
+    if (error) {
+      alert(`Gagal menghapus foto: ${error.message}`)
+      return
+    }
+
     router.refresh()
   }
 
