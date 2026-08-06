@@ -48,7 +48,7 @@ export default function RealisasiAnggaranSection() {
       {/* ── Summary Cards ── */}
       <div className="grid md:grid-cols-3 gap-5 mb-10">
         {/* Pendapatan */}
-        <div className="border rounded-2xl p-6 bg-white">
+        <div className="rounded-2xl p-6 bg-white shadow-sm hover:shadow-md transition-shadow duration-300">
           <p className="text-xs font-semibold text-gray-400 tracking-widest mb-3">TOTAL PENDAPATAN</p>
           <p className="text-2xl font-bold text-blue-700 mb-1">{formatRp(d.ringkasan.totalPendapatan.angka)}</p>
           <p className="flex items-center gap-1 text-green-600 text-xs font-medium">
@@ -57,7 +57,7 @@ export default function RealisasiAnggaranSection() {
         </div>
 
         {/* Belanja */}
-        <div className="border rounded-2xl p-6 bg-white">
+        <div className="rounded-2xl p-6 bg-white shadow-sm hover:shadow-md transition-shadow duration-300">
           <p className="text-xs font-semibold text-gray-400 tracking-widest mb-3">TOTAL BELANJA</p>
           <p className="text-2xl font-bold text-blue-700 mb-1">{formatRp(d.ringkasan.totalBelanja.angka)}</p>
           <p className="flex items-center gap-1 text-blue-500 text-xs font-medium">
@@ -66,7 +66,7 @@ export default function RealisasiAnggaranSection() {
         </div>
 
         {/* Surplus */}
-        <div className="rounded-2xl p-6 bg-green-900 text-white">
+        <div className="rounded-2xl p-6 bg-green-900 text-white shadow-sm hover:shadow-lg transition-shadow duration-300">
           <p className="text-xs font-semibold text-green-300 tracking-widest mb-3">SURPLUS ANGGARAN</p>
           <p className="text-2xl font-bold mb-1">{formatRp(d.ringkasan.surplus.angka)}</p>
           <p className="flex items-center gap-1 text-green-300 text-xs font-medium">
@@ -82,7 +82,7 @@ export default function RealisasiAnggaranSection() {
         <aside className="space-y-5">
 
           {/* Sumber Pendapatan */}
-          <div className="border rounded-2xl p-5">
+          <div className="rounded-2xl p-5 bg-white shadow-sm hover:shadow-md transition-shadow duration-300">
             <h3 className="font-bold text-lg mb-5">Sumber Pendapatan</h3>
             <div className="space-y-4">
               {d.sumberPendapatan.map((s) => {
@@ -106,7 +106,7 @@ export default function RealisasiAnggaranSection() {
           </div>
 
           {/* Pembiayaan */}
-          <div className="border rounded-2xl p-5">
+          <div className="rounded-2xl p-5 bg-white shadow-sm hover:shadow-md transition-shadow duration-300">
             <h3 className="font-bold text-lg mb-4">Pembiayaan (Netto)</h3>
             <div className="space-y-3">
               {d.pembiayaan.map((p) => {
@@ -125,7 +125,7 @@ export default function RealisasiAnggaranSection() {
           </div>
 
           {/* Kepala Desa */}
-          <div className="rounded-2xl bg-gray-900 text-white p-5">
+          <div className="rounded-2xl bg-gray-900 text-white p-5 shadow-sm hover:shadow-lg transition-shadow duration-300">
             <p className="text-xs font-semibold text-gray-400 tracking-widest mb-2">KEPALA DESA</p>
             <p className="font-bold text-xl mb-3">{d.kepalaDesa.nama}</p>
             <div className="flex gap-2">
@@ -138,9 +138,9 @@ export default function RealisasiAnggaranSection() {
         </aside>
 
         {/* ═══ MAIN: Rincian Belanja ═══ */}
-        <div className="border rounded-2xl overflow-hidden">
+        <div className="rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow duration-300">
           {/* Section header */}
-          <div className="flex items-center justify-between px-6 py-5 border-b">
+          <div className="flex items-center justify-between px-6 py-5 border-b border-gray-100">
             <h2 className="font-bold text-xl">Rincian Belanja per Bidang</h2>
             <span className="flex items-center gap-1.5 text-green-700 text-xs font-semibold">
               <CircleDot size={10} className="fill-green-500 text-green-500" />
@@ -149,7 +149,7 @@ export default function RealisasiAnggaranSection() {
           </div>
 
           {/* Accordion items */}
-          <div className="divide-y">
+          <div className="divide-y divide-gray-100">
             {d.rincianBelanja.map((bidang) => {
               const Icon = iconMap[bidang.icon]
               const isOpen = openId === bidang.id
@@ -196,14 +196,15 @@ export default function RealisasiAnggaranSection() {
                   {isOpen && hasDetail && (
                     <div className="bg-green-50 border-t border-green-100 px-6 py-5">
                       {/* Sub-program grid */}
-                      <div className="grid grid-cols-2 gap-x-10 gap-y-3 mb-6">
-                        {bidang.subProgram.map((sp) => (
-                          <div key={sp.nama} className="flex justify-between items-center text-sm">
-                            <span className="text-gray-600">{sp.nama}</span>
-                            <span className="font-semibold text-gray-900">{formatRp(sp.angka)}</span>
-                          </div>
-                        ))}
-                      </div>
+                      {/* Sub-program list */}
+<div className="space-y-3 mb-6">
+  {bidang.subProgram.map((sp) => (
+    <div key={sp.nama} className="flex justify-between items-start gap-6 text-sm">
+      <span className="text-gray-600 flex-1">{sp.nama}</span>
+      <span className="font-semibold text-gray-900 whitespace-nowrap">{formatRp(sp.angka)}</span>
+    </div>
+  ))}
+</div>
 
                       {/* Photo gallery */}
                       {bidang.foto.length > 0 && (
@@ -211,7 +212,7 @@ export default function RealisasiAnggaranSection() {
                           {bidang.foto.map((f) => (
                             <div
                               key={f.src}
-                              className="relative rounded-xl overflow-hidden bg-gray-200 aspect-video"
+                              className="relative rounded-xl overflow-hidden bg-gray-200 aspect-video shadow-sm"
                             >
                               <img
                                 src={f.src}

@@ -2,7 +2,7 @@ export default function PotensiHero() {
   return (
     <section className="relative h-72 flex items-center justify-center text-center bg-gradient-to-b from-gray-500 to-gray-700">
       <img
-        src="/potensi-hero.jpg"
+        src="/potensihero.JPG"
         alt="Potensi Desa Kurusumange"
         className="absolute inset-0 w-full h-full object-cover opacity-40"
       />

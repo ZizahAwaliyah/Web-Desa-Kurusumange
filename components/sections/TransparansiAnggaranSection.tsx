@@ -24,7 +24,7 @@ export default async function TransparansiAnggaranSection() {
         </p>
       </div>
 
-      <div className="border rounded-2xl p-6 md:p-8 grid md:grid-cols-2 gap-8 items-center mb-8">
+      <div className="bg-white rounded-2xl p-6 md:p-8 grid md:grid-cols-2 gap-8 items-center mb-8 shadow-sm hover:shadow-md transition-shadow duration-300">
         <div>
           <h2 className="text-xl font-bold mb-1">Alokasi Dana APBDes {anggaranInfo.tahun}</h2>
           <p className="text-gray-500 text-sm mb-6">Visualisasi sumber dan alokasi dana tahun berjalan.</p>
@@ -37,7 +37,7 @@ export default async function TransparansiAnggaranSection() {
 
           <div className="space-y-4">
             {anggaranInfo.alokasi.map((item) => (
-              <div key={item.label} className="flex items-start justify-between">
+              <div key={item.label} className="flex items-start justify-between bg-gray-50 rounded-xl p-3">
                 <div className="flex items-start gap-2">
                   <span className="w-3 h-3 rounded-sm mt-1" style={{ backgroundColor: item.warna }} />
                   <div>
@@ -52,7 +52,7 @@ export default async function TransparansiAnggaranSection() {
         </div>
       </div>
 
-      <div className="border rounded-2xl p-6 md:p-8 mb-8">
+      <div className="bg-white rounded-2xl p-6 md:p-8 mb-8 shadow-sm hover:shadow-md transition-shadow duration-300">
         <div className="flex items-center justify-between mb-6 flex-wrap gap-3">
           <div>
             <h2 className="text-xl font-bold">Realisasi Program Pembangunan</h2>
@@ -65,7 +65,7 @@ export default async function TransparansiAnggaranSection() {
 
         <div className="space-y-6">
           {realisasiProgram.map((program) => (
-            <div key={program.nama}>
+            <div key={program.nama} className="bg-gray-50 rounded-xl p-4">
               <div className="flex justify-between items-start mb-1">
                 <div>
                   <p className="font-semibold">{program.nama}</p>
@@ -88,7 +88,7 @@ export default async function TransparansiAnggaranSection() {
                   <p className="text-gray-400 text-xs">Selesai</p>
                 </div>
               </div>
-              <div className="w-full bg-gray-100 rounded-full h-2 mb-2">
+              <div className="w-full bg-white rounded-full h-2 mb-2 mt-3">
                 <div className={`h-2 rounded-full ${program.warna}`} style={{ width: `${program.persen}%` }} />
               </div>
               <p className="text-gray-500 text-xs">
@@ -99,8 +99,8 @@ export default async function TransparansiAnggaranSection() {
         </div>
       </div>
 
-      <div className="border rounded-2xl overflow-hidden">
-        <div className="p-6 border-b">
+      <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
+        <div className="p-6 border-b border-gray-100">
           <h2 className="text-xl font-bold">Dokumen Publik</h2>
           <p className="text-gray-500 text-sm">Unduh dokumen perencanaan dan laporan resmi pemerintah desa.</p>
         </div>
@@ -116,7 +116,7 @@ export default async function TransparansiAnggaranSection() {
             </thead>
             <tbody>
               {dokumenAnggaran.map((doc) => (
-                <tr key={doc.id} className="border-t">
+                <tr key={doc.id} className="border-t border-gray-100 hover:bg-gray-50 transition-colors">
                   <td className="px-6 py-4">
                     <div className="flex items-start gap-2">
                       <FileText size={16} className="text-red-500 mt-0.5" />
@@ -129,7 +129,7 @@ export default async function TransparansiAnggaranSection() {
                       <a
                         href={doc.file_url}
                         download
-                        className="flex items-center gap-1.5 border rounded-lg px-3 py-1.5 text-xs font-medium hover:bg-gray-50 w-fit"
+                        className="flex items-center gap-1.5 bg-green-800 text-white rounded-lg px-3 py-1.5 text-xs font-medium hover:bg-green-900 transition-colors w-fit"
                       >
                         <Download size={13} /> Unduh
                       </a>

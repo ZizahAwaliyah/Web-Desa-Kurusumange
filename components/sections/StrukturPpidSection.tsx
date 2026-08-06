@@ -16,7 +16,7 @@ export default function StrukturPpidSection() {
 
       {/* Bagan Struktur */}
       <div className="flex flex-col items-center mb-10">
-        <div className="bg-green-900 text-white rounded-xl px-10 py-5 text-center w-72">
+        <div className="bg-green-900 text-white rounded-xl px-10 py-5 text-center w-72 shadow-sm">
           <p className="text-xs text-white/70">{strukturPpid.atasan.label}</p>
           <p className="font-bold text-lg">{strukturPpid.atasan.jabatan}</p>
           <p className="text-xs text-white/70">{strukturPpid.atasan.sub}</p>
@@ -24,7 +24,7 @@ export default function StrukturPpidSection() {
 
         <div className="w-px h-8 bg-gray-300" />
 
-        <div className="bg-blue-800 text-white rounded-xl px-10 py-5 text-center w-72 mb-8">
+        <div className="bg-blue-800 text-white rounded-xl px-10 py-5 text-center w-72 mb-8 shadow-sm">
           <p className="text-xs text-white/70">{strukturPpid.pelaksana.label}</p>
           <p className="font-bold text-lg">{strukturPpid.pelaksana.jabatan}</p>
           <p className="text-xs text-white/70">{strukturPpid.pelaksana.sub}</p>
@@ -34,7 +34,10 @@ export default function StrukturPpidSection() {
           {strukturPpid.bidang.map((item) => {
             const Icon = iconMap[item.icon]
             return (
-              <div key={item.label} className="border rounded-2xl p-6 text-center">
+              <div
+                key={item.label}
+                className="bg-white rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow duration-300"
+              >
                 <div className={`w-10 h-10 rounded-lg flex items-center justify-center mx-auto mb-3 ${item.warna}`}>
                   <Icon size={18} />
                 </div>
@@ -48,7 +51,7 @@ export default function StrukturPpidSection() {
 
       {/* Info Bawah */}
       <div className="grid md:grid-cols-3 gap-5">
-        <div className="bg-blue-50 rounded-2xl p-6 flex items-center gap-4">
+        <div className="bg-blue-50 rounded-2xl p-6 flex items-center gap-4 shadow-sm hover:shadow-md transition-shadow duration-300">
           <img src="/ppid-transparansi.jpg" alt="Transparansi" className="w-16 h-16 rounded-lg object-cover" />
           <div>
             <h4 className="font-bold text-sm mb-1">Transparansi Publik</h4>
@@ -56,12 +59,12 @@ export default function StrukturPpidSection() {
           </div>
         </div>
 
-        <div className="bg-blue-200 rounded-2xl p-6 flex flex-col items-center justify-center text-center">
+        <div className="bg-blue-200 rounded-2xl p-6 flex flex-col items-center justify-center text-center shadow-sm hover:shadow-md transition-shadow duration-300">
           <ShieldCheck size={26} className="text-blue-800 mb-2" />
           <p className="font-bold text-sm">100% Akuntabel</p>
         </div>
 
-        <div className="bg-yellow-200 rounded-2xl p-6 flex flex-col items-center justify-center text-center">
+        <div className="bg-yellow-200 rounded-2xl p-6 flex flex-col items-center justify-center text-center shadow-sm hover:shadow-md transition-shadow duration-300">
           <RotateCw size={26} className="text-yellow-800 mb-2" />
           <p className="font-bold text-sm">Update Berkala</p>
         </div>

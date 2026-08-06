@@ -2,7 +2,7 @@ export default function ProfilHero() {
   return (
     <section className="relative h-[400px] flex items-end">
       <img
-        src="/profil-hero.jpg"
+        src="/profilhero.jpg"
         alt="Desa Kurusumange"
         className="absolute inset-0 w-full h-full object-cover"
       />

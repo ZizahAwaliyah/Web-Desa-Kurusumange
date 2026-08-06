@@ -53,8 +53,8 @@ export default async function BeritaPage({
       {/* Featured Berita */}
       {featured && currentPage === 1 && (
         <Link
-          href={`/berita/${featured.slug}`}
-          className="block border rounded-2xl p-8 mb-8 hover:shadow-lg transition-shadow grid md:grid-cols-2 gap-6"
+         href={`/berita/${featured.slug}`}
+         className="block bg-white rounded-2xl p-8 mb-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 grid md:grid-cols-2 gap-6"
         >
           {featured.gambar_url ? (
             <img src={featured.gambar_url} alt={featured.judul} className="rounded-xl w-full h-56 object-cover" />
@@ -81,12 +81,12 @@ export default async function BeritaPage({
           <Link
             key={berita.id}
             href={`/berita/${berita.slug}`}
-            className="border rounded-2xl overflow-hidden hover:shadow-lg transition-shadow"
+            className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
           >
             {berita.gambar_url ? (
-              <img src={berita.gambar_url} alt={berita.judul} className="w-full h-44 object-cover" />
-            ) : (
-              <div className="bg-gray-100 h-44" />
+               <img src={berita.gambar_url} alt={berita.judul} className="w-full h-44 object-cover group-hover:scale-105 transition-transform duration-300" />
+             ) : (
+           <div className="bg-gray-100 h-44" />
             )}
             <div className="p-5">
               <p className="text-xs text-gray-500 flex items-center gap-1 mb-2">

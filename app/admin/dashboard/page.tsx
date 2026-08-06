@@ -1,5 +1,7 @@
 import { supabase } from '@/lib/supabase'
-import { Newspaper, FileText, Images } from 'lucide-react'
+import Link from 'next/link'
+import { Newspaper, FileText, Images, Plus } from 'lucide-react'
+import StatCard from '@/components/admin/ui/StatCard'
 
 export default async function DashboardPage() {
   const { count: totalBerita } = await supabase
@@ -14,34 +16,57 @@ export default async function DashboardPage() {
     .from('galeri')
     .select('*', { count: 'exact', head: true })
 
+  const quickActions = [
+    { label: 'Tambah Berita', href: '/admin/berita/tambah' },
+    { label: 'Tambah Dokumen PPID', href: '/admin/ppid/tambah' },
+    { label: 'Tambah Foto Galeri', href: '/admin/galeri/tambah' },
+  ]
+
   return (
     <div>
       <h1 className="text-2xl font-bold mb-1">Dashboard</h1>
       <p className="text-gray-500 mb-8">Selamat datang di panel admin Desa Kurusumange.</p>
 
-      <div className="grid sm:grid-cols-3 gap-5">
-        <div className="bg-white border rounded-2xl p-6">
-          <div className="bg-green-100 text-green-700 w-11 h-11 rounded-xl flex items-center justify-center mb-4">
-            <Newspaper size={20} />
-          </div>
-          <p className="text-3xl font-bold mb-1">{totalBerita || 0}</p>
-          <p className="text-gray-500 text-sm">Total Berita Dipublikasikan</p>
-        </div>
+      <div className="grid sm:grid-cols-3 gap-5 mb-8">
+        <StatCard
+          icon={Newspaper}
+          value={totalBerita || 0}
+          label="Total Berita Dipublikasikan"
+          color="green"
+          href="/admin/berita"
+          linkLabel="Kelola Berita"
+        />
+        <StatCard
+          icon={FileText}
+          value={totalDokumen || 0}
+          label="Total Dokumen PPID"
+          color="blue"
+          href="/admin/ppid"
+          linkLabel="Kelola Dokumen"
+        />
+        <StatCard
+          icon={Images}
+          value={totalGaleri || 0}
+          label="Total Foto Galeri"
+          color="yellow"
+          href="/admin/galeri"
+          linkLabel="Kelola Galeri"
+        />
+      </div>
 
-        <div className="bg-white border rounded-2xl p-6">
-          <div className="bg-blue-100 text-blue-700 w-11 h-11 rounded-xl flex items-center justify-center mb-4">
-            <FileText size={20} />
-          </div>
-          <p className="text-3xl font-bold mb-1">{totalDokumen || 0}</p>
-          <p className="text-gray-500 text-sm">Total Dokumen PPID</p>
-        </div>
-
-        <div className="bg-white border rounded-2xl p-6">
-          <div className="bg-yellow-100 text-yellow-700 w-11 h-11 rounded-xl flex items-center justify-center mb-4">
-            <Images size={20} />
-          </div>
-          <p className="text-3xl font-bold mb-1">{totalGaleri || 0}</p>
-          <p className="text-gray-500 text-sm">Total Foto Galeri</p>
+      <div className="bg-white border rounded-2xl p-6 shadow-sm">
+        <p className="font-semibold text-sm mb-4">Aksi Cepat</p>
+        <div className="flex flex-wrap gap-3">
+          {quickActions.map((action) => (
+            <Link
+  key={action.href}
+  href={action.href}
+  className="flex items-center gap-2 rounded-lg px-4 py-2.5 text-sm font-medium bg-gray-50 hover:bg-gray-100 transition-colors"
+>
+              <Plus size={15} className="text-green-800" />
+              {action.label}
+            </Link>
+          ))}
         </div>
       </div>
     </div>

@@ -36,7 +36,10 @@ export default function StrukturOrganisasiSection() {
       {/* Lembaga Desa */}
       <div className="grid md:grid-cols-3 gap-6">
         {lembagaDesa.map((lembaga) => (
-          <div key={lembaga.nama} className="border rounded-2xl overflow-hidden">
+          <div
+            key={lembaga.nama}
+            className="rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+          >
             <div className={`${lembaga.warna} text-white p-5`}>
               <h3 className="font-bold text-lg">{lembaga.nama}</h3>
               <p className="text-white/80 text-xs">{lembaga.subtitle}</p>

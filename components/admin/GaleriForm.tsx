@@ -3,6 +3,9 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
+import FileUpload from '@/components/admin/ui/FileUpload'
+import ErrorAlert from '@/components/admin/ui/ErrorAlert'
+import FormActions from '@/components/admin/ui/FormActions'
 
 export default function GaleriForm({
   initialData,
@@ -24,12 +27,9 @@ export default function GaleriForm({
   const router = useRouter()
   const isEdit = !!initialData
 
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const selected = e.target.files?.[0]
-    if (selected) {
-      setFile(selected)
-      setPreview(URL.createObjectURL(selected))
-    }
+  const handleFileSelect = (selected: File) => {
+    setFile(selected)
+    setPreview(URL.createObjectURL(selected))
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -90,7 +90,7 @@ export default function GaleriForm({
   }
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-xl bg-white border rounded-2xl p-6 space-y-5">
+    <form onSubmit={handleSubmit} className="max-w-xl mx-auto bg-white rounded-2xl p-8 space-y-6 shadow-sm">
       <div>
         <label className="text-sm font-medium block mb-1.5">Judul Foto</label>
         <input
@@ -116,26 +116,23 @@ export default function GaleriForm({
 
       <div>
         <label className="text-sm font-medium block mb-1.5">Foto</label>
-        {preview && (
-          <img src={preview} alt="Preview" className="w-full h-48 object-cover rounded-lg mb-3" />
-        )}
-        <input
-          type="file"
+        <FileUpload
           accept="image/*"
-          onChange={handleFileChange}
-          className="w-full border rounded-lg px-4 py-2.5 text-sm"
+          kind="image"
+          preview={preview}
+          onFileSelect={handleFileSelect}
+          hint="PNG atau JPG"
         />
       </div>
 
-      {error && <p className="text-red-600 text-sm">{error}</p>}
+      {error && <ErrorAlert message={error} />}
 
-      <button
-        type="submit"
-        disabled={loading}
-        className="bg-green-800 text-white font-medium px-6 py-2.5 rounded-lg hover:bg-green-900 disabled:opacity-50"
-      >
-        {loading ? 'Menyimpan...' : isEdit ? 'Simpan Perubahan' : 'Tambah Foto'}
-      </button>
+      <FormActions
+        loading={loading}
+        submitLabel={isEdit ? 'Simpan Perubahan' : 'Tambah Foto'}
+        loadingLabel="Menyimpan..."
+        cancelHref="/admin/galeri"
+      />
     </form>
   )
 }

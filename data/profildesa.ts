@@ -7,14 +7,26 @@ export const profilTabs = {
   sejarah: {
     label: 'Sejarah Desa',
     subLabel: null,
-    konten: `[Ganti dengan narasi sejarah desa kamu di sini]`,
+    konten: `Desa Kurusumange merupakan salah satu desa yang berada di Kecamatan Tanralili, Kabupaten Maros, Sulawesi Selatan. Nama Kurusumange berasal dari kata "Kurusumangenu" yang dalam bahasa setempat memiliki arti "dikasihani". Penamaan tersebut lahir dari kisah masyarakat terdahulu yang menggambarkan kondisi kehidupan pada masa itu, sehingga nama tersebut kemudian diwariskan dan tetap digunakan hingga sekarang sebagai identitas desa.
+
+
+    Pemerintahan Desa Kurusumange mulai terbentuk sekitar tahun 1930. Kepala desa pertama yang memimpin desa ini adalah H. Tobba, yang menjadi pelopor dalam penyelenggaraan pemerintahan desa. Seiring berjalannya waktu, kepemimpinan desa terus mengalami pergantian dari satu periode ke periode berikutnya sebagai bagian dari perkembangan pemerintahan dan pembangunan desa.
+
+
+    Dalam perjalanan sejarahnya, Desa Kurusumange mengalami berbagai perubahan, baik dari segi penyelenggaraan pemerintahan, pembangunan infrastruktur, maupun peningkatan pelayanan kepada masyarakat. Berbagai program pembangunan yang dilaksanakan secara bertahap telah mendorong peningkatan kualitas hidup masyarakat serta memperkuat tata kelola pemerintahan desa.
+
+
+    Saat ini, Desa Kurusumange dipimpin oleh H. Muh. Ridwan sebagai Kepala Desa. Di bawah kepemimpinannya, pemerintah desa terus berupaya mewujudkan tata kelola pemerintahan yang transparan, akuntabel, dan partisipatif, sekaligus mengoptimalkan potensi desa untuk meningkatkan kesejahteraan masyarakat.
+
+
+    Dengan tetap menjaga nilai-nilai budaya, semangat gotong royong, dan kearifan lokal yang telah diwariskan oleh para pendahulu, Desa Kurusumange terus berkomitmen menjadi desa yang maju, mandiri, serta mampu memberikan pelayanan publik yang berkualitas kepada seluruh masyarakat.`,
   },
   visiMisi: {
     label: 'Visi & Misi',
     subLabel: null,
-    visi: `[Terwujudnya Masyarakat Desa Sejahtera yang
+    visi: `Terwujudnya Masyarakat Desa Sejahtera yang
 Aman, Sehat, Adil, Berbudaya dan Relegius menuju
-Masyarakat yang Mandiri dan Harmonis Tahun 2025]`,
+Masyarakat yang Mandiri dan Harmonis Tahun 2025`,
     misi: [
       'Memaksimalkan kegiatan pemberdayaan masyarakat untuk mengembangkan sumber daya manusia',
       'Meningkatkan perbaikan infrastruktur desa sebagai kebutuhan dasar masyarakat dalam melakukan aktifitas ekonomi Desa',

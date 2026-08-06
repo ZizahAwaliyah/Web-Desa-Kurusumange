@@ -43,9 +43,15 @@ export default function GaleriSection({ galeriDesa }: { galeriDesa: FotoGaleri[]
             <button
               key={foto.id}
               onClick={() => openLightbox(index)}
-              className="rounded-2xl overflow-hidden border hover:opacity-90 transition-opacity"
+              className="group rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
             >
-              <img src={foto.gambar_url} alt={foto.judul} className="w-full h-56 object-cover" />
+              <div className="overflow-hidden">
+                <img
+                  src={foto.gambar_url}
+                  alt={foto.judul}
+                  className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
             </button>
           ))}
         </div>

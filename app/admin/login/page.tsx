@@ -2,12 +2,14 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
+import Link from 'next/link'
 import { createClient } from '@/lib/supabase/client'
-import { LogIn } from 'lucide-react'
+import { Mail, Lock, Eye, EyeOff, ArrowRight, ShieldCheck, Navigation2, Sparkles } from 'lucide-react'
 
 export default function LoginPage() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [showPassword, setShowPassword] = useState(false)
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
   const router = useRouter()
@@ -32,51 +34,112 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 px-6">
-      <div className="bg-white border rounded-2xl p-8 w-full max-w-sm">
-        <div className="text-center mb-6">
-          <div className="bg-green-800 text-white w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-4">
-            <LogIn size={22} />
+    <div className="min-h-screen grid md:grid-cols-2">
+      {/* Panel Kiri — Branding */}
+      <div className="hidden md:flex flex-col justify-between bg-gradient-to-br from-green-900 to-green-950 text-white p-12 relative overflow-hidden">
+        <div>
+          <div className="flex items-center gap-3 mb-10">
+            <img src="/logo maros.png" alt="Logo" className="h-10 w-10" />
+            <span className="font-bold text-lg">Desa Kurusumange</span>
           </div>
-          <h1 className="text-xl font-bold">Login Admin</h1>
-          <p className="text-gray-500 text-sm">Desa Kurusumange</p>
+
+          <span className="inline-flex items-center gap-1.5 bg-white/10 text-white text-xs font-semibold px-3 py-1.5 rounded-full mb-6">
+            <Sparkles size={12} /> ADMIN ACCESS
+          </span>
+
+          <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
+            Panel pengelolaan yang rapi, cepat, dan aman.
+          </h1>
+
+          <p className="text-green-100 max-w-md">
+            Masuk untuk mengelola berita, dokumen PPID, dan galeri Desa Kurusumange dari satu pintu kerja.
+          </p>
         </div>
 
-        <form onSubmit={handleLogin} className="space-y-4">
-          <div>
-            <label className="text-sm font-medium block mb-1.5">Email</label>
-            <input
-              type="email"
-              required
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="w-full border rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-green-700"
-              placeholder="admin@kurusumange.desa.id"
-            />
+        <div className="grid grid-cols-2 gap-4">
+          <div className="bg-white/5 rounded-xl p-4">
+            <div className="flex items-center gap-2 mb-2">
+              <ShieldCheck size={16} className="text-yellow-400" />
+              <p className="font-semibold text-sm">Akses Terbatas</p>
+            </div>
+            <p className="text-green-200 text-xs">Login hanya untuk pengelola yang memiliki akun admin.</p>
           </div>
-
-          <div>
-            <label className="text-sm font-medium block mb-1.5">Password</label>
-            <input
-              type="password"
-              required
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="w-full border rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-green-700"
-              placeholder="••••••••"
-            />
+          <div className="bg-white/5 rounded-xl p-4">
+            <div className="flex items-center gap-2 mb-2">
+              <Navigation2 size={16} className="text-yellow-400" />
+              <p className="font-semibold text-sm">Navigasi Cepat</p>
+            </div>
+            <p className="text-green-200 text-xs">Kelola konten desa tanpa berpindah ke banyak halaman.</p>
           </div>
+        </div>
+      </div>
 
-          {error && <p className="text-red-600 text-sm">{error}</p>}
+      {/* Panel Kanan — Form */}
+      <div className="flex items-center justify-center p-6 md:p-12 bg-white">
+        <div className="w-full max-w-sm">
+          <p className="text-green-700 text-xs font-semibold tracking-widest mb-2">SELAMAT DATANG</p>
+          <h2 className="text-3xl font-bold mb-2">Login Admin Panel</h2>
+          <p className="text-gray-500 text-sm mb-8">
+            Masukkan email dan kata sandi Anda untuk mengakses dashboard pengelolaan.
+          </p>
 
-          <button
-            type="submit"
-            disabled={loading}
-            className="w-full bg-green-800 text-white font-medium py-2.5 rounded-lg hover:bg-green-900 disabled:opacity-50"
-          >
-            {loading ? 'Memproses...' : 'Masuk'}
-          </button>
-        </form>
+          <form onSubmit={handleLogin} className="space-y-5">
+            <div>
+              <label className="text-sm font-medium block mb-1.5">Alamat Email</label>
+              <div className="relative">
+                <Mail size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
+                <input
+                  type="email"
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="w-full border border-gray-200 rounded-xl pl-11 pr-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-green-700"
+                  placeholder="admin@kurusumange.desa.id"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label className="text-sm font-medium block mb-1.5">Kata Sandi</label>
+              <div className="relative">
+                <Lock size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
+                <input
+                  type={showPassword ? 'text' : 'password'}
+                  required
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="w-full border border-gray-200 rounded-xl pl-11 pr-11 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-green-700"
+                  placeholder="Masukkan kata sandi"
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
+                >
+                  {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+                </button>
+              </div>
+            </div>
+
+            {error && <p className="text-red-600 text-sm">{error}</p>}
+
+            <button
+              type="submit"
+              disabled={loading}
+              className="w-full flex items-center justify-center gap-2 bg-green-800 text-white font-medium py-3 rounded-xl hover:bg-green-900 transition-colors disabled:opacity-50"
+            >
+              {loading ? 'Memproses...' : 'Masuk ke Dashboard'}
+              {!loading && <ArrowRight size={18} />}
+            </button>
+          </form>
+
+          <p className="text-center text-sm text-gray-500 mt-6">
+            Kembali ke halaman utama?{' '}
+            <Link href="/" className="text-green-700 font-semibold hover:underline">
+              Beranda
+            </Link>
+          </p>
+        </div>
       </div>
     </div>
   )

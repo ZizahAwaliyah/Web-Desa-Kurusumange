@@ -3,27 +3,27 @@ export const kepalaDesa = {
   jabatan: 'KEPALA DESA KURUSUMANGE',
   email: 'kades@kurusumange.desa.id',
   telepon: '+62 811-2222-3333',
-  foto: '/struktur/kepala-desa.jpg',
+  foto: '/kepaladesa.jpg',
 }
 
 export const perangkatDesa = [
-  { nama: 'Nur Tina', jabatan: 'SEKRETARIS DESA', email: 'kades@kurusumange.desa.id', telepon: '+62 811-2222-3333', foto: '/struktur/sekretaris.jpg' },
-  { nama: 'Mirawati', jabatan: 'KASI KESRA DAN PELAYANAN', email: 'kades@kurusumange.desa.id', telepon: '+62 811-2222-3333', foto: '/struktur/kasi-kesra.jpg' },
-  { nama: 'Nurlaelah', jabatan: 'KASI PEMERINTAHAN', email: 'kades@kurusumange.desa.id', telepon: '+62 811-2222-3333', foto: '/struktur/kasi-pemerintahan.jpg' },
-  { nama: 'Nurlela Sari', jabatan: 'KAUR UMUM DAN PERENCANAAN', email: 'kades@kurusumange.desa.id', telepon: '+62 811-2222-3333', foto: '/struktur/kaur-umum.jpg' },
-  { nama: 'Nurlela', jabatan: 'KAUR KEUANGAN', email: 'kades@kurusumange.desa.id', telepon: '+62 811-2222-3333', foto: '/struktur/kaur-keuangan.jpg' },
-  { nama: 'Putri Jayani', jabatan: 'STAF', email: 'kades@kurusumange.desa.id', telepon: '+62 811-2222-3333', foto: '/struktur/staf-1.jpg' },
-  { nama: 'Saparuddin', jabatan: 'STAF', email: 'kades@kurusumange.desa.id', telepon: '+62 811-2222-3333', foto: '/struktur/staf-2.jpg' },
-  { nama: 'Nurasiza', jabatan: 'STAF', email: 'kades@kurusumange.desa.id', telepon: '+62 811-2222-3333', foto: '/struktur/staf-3.jpg' },
-  { nama: 'Wahyu Permana Putra', jabatan: 'STAF', email: 'kades@kurusumange.desa.id', telepon: '+62 811-2222-3333', foto: '/struktur/staf-3.jpg' },
+  { nama: 'Nur Tina', jabatan: 'SEKRETARIS DESA', email: 'kades@kurusumange.desa.id', telepon: '+62 811-2222-3333', foto: '/sekretaris.jpeg' },
+  { nama: 'Mirawati', jabatan: 'KASI KESRA DAN PELAYANAN', email: 'kades@kurusumange.desa.id', telepon: '+62 811-2222-3333', foto: '/kasikesra.jpg' },
+  { nama: 'Nurlaelah', jabatan: 'KASI PEMERINTAHAN', email: 'kades@kurusumange.desa.id', telepon: '+62 811-2222-3333', foto: '/kasipemerintahan.jpeg' },
+  { nama: 'Nurlela Sari', jabatan: 'KAUR UMUM DAN PERENCANAAN', email: 'kades@kurusumange.desa.id', telepon: '+62 811-2222-3333', foto: '/kaurumum.jpeg' },
+  { nama: 'Nurlela', jabatan: 'KAUR KEUANGAN', email: 'kades@kurusumange.desa.id', telepon: '+62 811-2222-3333', foto: '/kaurkeuangan.jpeg' },
+  { nama: 'Putri Jayani', jabatan: 'STAF', email: 'kades@kurusumange.desa.id', telepon: '+62 811-2222-3333', foto: '/staf1.jpeg' },
+  { nama: 'Saparuddin', jabatan: 'STAF', email: 'kades@kurusumange.desa.id', telepon: '+62 811-2222-3333', foto: '/staf2.jpeg' },
+  { nama: 'Nurasiza', jabatan: 'STAF', email: 'kades@kurusumange.desa.id', telepon: '+62 811-2222-3333', foto: '/staf3.jpeg' },
+  { nama: 'Wahyu Permana Putra', jabatan: 'STAF', email: 'kades@kurusumange.desa.id', telepon: '+62 811-2222-3333', foto: '/staf4.jpeg' },
 ]
 
 export const kepalaDusun = [
-  { nama: 'MUH RAMLI', jabatan: 'KADUS MAJANNANG', foto: '/struktur/dusun-1.jpg' },
-  { nama: 'ALIF ALAMSYAH', jabatan: 'KADUS PANASAKKANG', foto: '/struktur/dusun-2.jpg' },
-  { nama: 'HAMSAH', jabatan: 'KADUS BIRA-BIRA', foto: '/struktur/dusun-3.jpg' },
-  { nama: 'ABD. ASIS DG. NGALLE', jabatan: 'KADUS BONTO BIRA', foto: '/struktur/dusun-4.jpg' },
-  { nama: 'SYARIFUDDIN', jabatan: 'KADUS KA`BUNG', foto: '/struktur/dusun-5.jpg' },
+  { nama: 'MUH RAMLI', jabatan: 'KADUS MAJANNANG', foto: '/dusun1.jpeg' },
+  { nama: 'ALIF ALAMSYAH', jabatan: 'KADUS PANASAKKANG', foto: '/dusun2.jpeg' },
+  { nama: 'HAMSAH', jabatan: 'KADUS BIRA-BIRA', foto: '/dusun3.jpg' },
+  { nama: 'ABD. ASIS DG. NGALLE', jabatan: 'KADUS BONTO BIRA', foto: '/dusun4.jpeg' },
+  { nama: 'SYARIFUDDIN', jabatan: 'KADUS KA`BUNG', foto: '/dusun5.jpeg' },
 ]
 
 export const lembagaDesa = [

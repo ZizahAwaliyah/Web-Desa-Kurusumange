@@ -28,7 +28,7 @@ export default function DeleteGaleriButton({ id, gambarUrl }: { id: number; gamb
     <button
       onClick={handleDelete}
       disabled={loading}
-      className="flex-1 flex items-center justify-center gap-1 p-2 border rounded-lg text-red-600 hover:bg-red-50 text-xs disabled:opacity-50"
+      className="flex-1 flex items-center justify-center gap-1 p-2 rounded-lg text-red-600 bg-red-50 hover:bg-red-100 transition-colors text-xs disabled:opacity-50"
     >
       <Trash2 size={13} /> Hapus
     </button>

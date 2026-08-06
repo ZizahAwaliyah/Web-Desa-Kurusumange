@@ -43,12 +43,12 @@ export default function AksesLayananSection() {
             <a
               key={item.judul}
               href={item.href}
-              className="border rounded-2xl p-6 hover:shadow-lg transition-shadow"
+              className="group bg-white rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
             >
               <div className={`w-11 h-11 rounded-xl flex items-center justify-center mb-4 ${item.iconBg}`}>
                 <Icon size={20} />
               </div>
-              <h3 className="font-bold mb-1">{item.judul}</h3>
+              <h3 className="font-bold mb-1 group-hover:text-green-700 transition-colors">{item.judul}</h3>
               <p className="text-gray-500 text-sm">{item.deskripsi}</p>
             </a>
           )

@@ -17,7 +17,7 @@ export default function ProfilPpidSection() {
       {/* Hero */}
       <section className="relative rounded-3xl overflow-hidden min-h-[380px] flex items-center mb-14">
         <img
-          src="/ppid-hero.jpg"
+          src="/ppidhero.png"
           alt="PPID Desa Kurusumange"
           className="absolute inset-0 w-full h-full object-cover opacity-30"
         />
@@ -43,7 +43,10 @@ export default function ProfilPpidSection() {
           {dasarHukum.map((item) => {
             const Icon = iconMap[item.icon]
             return (
-              <div key={item.judul} className="bg-white border rounded-2xl p-6 flex gap-4">
+              <div
+                key={item.judul}
+                className="bg-white rounded-2xl p-6 flex gap-4 shadow-sm hover:shadow-md transition-shadow duration-300"
+              >
                 <Icon size={22} className="text-gray-700 flex-shrink-0 mt-1" />
                 <div>
                   <h3 className="font-bold mb-1">{item.judul}</h3>
@@ -64,7 +67,10 @@ export default function ProfilPpidSection() {
           {tugasUtama.slice(0, 2).map((item) => {
             const Icon = iconMap[item.icon]
             return (
-              <div key={item.judul} className={`rounded-2xl p-6 ${item.warna}`}>
+              <div
+                key={item.judul}
+                className={`rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300 ${item.warna}`}
+              >
                 <Icon size={28} className="mb-4" />
                 <h3 className="font-bold text-xl mb-2">{item.judul}</h3>
                 <p className="text-sm opacity-90">{item.deskripsi}</p>
@@ -76,7 +82,10 @@ export default function ProfilPpidSection() {
           {tugasUtama.slice(2, 4).map((item) => {
             const Icon = iconMap[item.icon]
             return (
-              <div key={item.judul} className={`rounded-2xl p-6 flex gap-4 ${item.warna}`}>
+              <div
+                key={item.judul}
+                className={`rounded-2xl p-6 flex gap-4 shadow-sm hover:shadow-md transition-shadow duration-300 ${item.warna}`}
+              >
                 <Icon size={24} className="flex-shrink-0 mt-1" />
                 <div>
                   <h3 className="font-bold mb-1">{item.judul}</h3>
@@ -97,7 +106,10 @@ export default function ProfilPpidSection() {
           {klasifikasiInfo.map((item) => {
             const Icon = iconMap[item.icon]
             return (
-              <div key={item.judul} className="bg-white border rounded-2xl p-6 text-center">
+              <div
+                key={item.judul}
+                className="bg-white rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow duration-300"
+              >
                 <Icon size={26} className={`mx-auto mb-3 ${item.warna}`} />
                 <h3 className="font-bold text-sm mb-2 tracking-wide">{item.judul}</h3>
                 <p className="text-gray-500 text-xs">{item.deskripsi}</p>

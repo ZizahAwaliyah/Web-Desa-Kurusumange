@@ -16,16 +16,25 @@ export default function PotensiGridSection() {
 
       <div className="grid md:grid-cols-3 gap-6">
         {potensiDesa.map((item) => (
-          <div key={item.id} className="rounded-2xl border overflow-hidden">
-            <div className="relative h-48 bg-gray-200">
-              <img src={item.gambar} alt={item.nama} className="w-full h-full object-cover" />
+          <div
+            key={item.id}
+            className="group rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer"
+          >
+            <div className="relative h-48 bg-gray-100 overflow-hidden">
+              <img
+                src={item.gambar}
+                alt={item.nama}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              />
               <span className={`absolute top-3 left-3 text-xs font-semibold px-3 py-1 rounded-full ${badgeColor[item.kategori]}`}>
                 {item.kategori}
               </span>
             </div>
 
             <div className="p-5">
-              <h3 className="font-bold text-lg mb-2">{item.nama}</h3>
+              <h3 className="font-bold text-lg mb-2 group-hover:text-green-700 transition-colors">
+                {item.nama}
+              </h3>
               <p className="text-gray-600 text-sm">{item.deskripsi}</p>
             </div>
           </div>

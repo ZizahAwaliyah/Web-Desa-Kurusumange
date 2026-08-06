@@ -57,7 +57,7 @@ export default async function DetailBeritaPage({
       <h1 className="text-3xl font-bold mb-6">{berita.judul}</h1>
 
       {berita.gambar_url && (
-        <img src={berita.gambar_url} alt={berita.judul} className="w-full rounded-2xl mb-8 max-h-[450px] object-cover" />
+        <img src={b.gambar_url} alt={b.judul} className="w-full h-32 object-cover group-hover:scale-105 transition-transform duration-300" />
       )}
 
       <div className="prose max-w-none text-gray-700 space-y-4 mb-10">
@@ -66,7 +66,7 @@ export default async function DetailBeritaPage({
         ))}
       </div>
 
-      <div className="border-t pt-6 flex items-center justify-between">
+      <div className="border-t border-gray-100 pt-6 flex items-center justify-between">
         <p className="font-medium">Bagikan artikel ini:</p>
         <ShareButtons judul={berita.judul} />
       </div>
@@ -81,7 +81,7 @@ export default async function DetailBeritaPage({
 
           <div className="grid sm:grid-cols-3 gap-5">
             {beritaLainnya.map((b) => (
-              <Link key={b.id} href={`/berita/${b.slug}`} className="border rounded-xl overflow-hidden hover:shadow-md transition-shadow">
+              <Link key={b.id} href={`/berita/${b.slug}`} className="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                 {b.gambar_url ? (
                   <img src={b.gambar_url} alt={b.judul} className="w-full h-32 object-cover" />
                 ) : (

@@ -29,7 +29,7 @@ export default function AlurPermohonanSection() {
                 {!isLast && <div className="w-px flex-1 bg-gray-200 mt-2" />}
               </div>
 
-              <div className="border rounded-2xl p-6 flex-1 mb-2">
+              <div className="bg-white rounded-2xl p-6 flex-1 mb-2 shadow-sm hover:shadow-md transition-shadow duration-300">
                 <div className="flex items-center gap-2 mb-3">
                   <Icon size={20} className="text-gray-700" />
                   <h3 className="font-bold text-lg">{step.judul}</h3>
@@ -38,7 +38,7 @@ export default function AlurPermohonanSection() {
                 {step.tags.length > 0 && (
                   <div className="flex gap-2">
                     {step.tags.map((tag) => (
-                      <span key={tag} className="border rounded-full px-3 py-1 text-xs text-gray-600">
+                      <span key={tag} className="bg-gray-50 rounded-full px-3 py-1 text-xs text-gray-600">
                         {tag}
                       </span>
                     ))}
@@ -52,7 +52,7 @@ export default function AlurPermohonanSection() {
 
       {/* Info Waktu & Biaya */}
       <div className="grid md:grid-cols-2 gap-6">
-        <div className="bg-blue-300 rounded-2xl p-6">
+        <div className="bg-blue-300 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
           <div className="flex items-center gap-2 mb-4">
             <Clock size={18} className="text-blue-900" />
             <h3 className="font-bold text-blue-900">{infoLayanan.waktu.label}</h3>
@@ -64,7 +64,7 @@ export default function AlurPermohonanSection() {
           <p className="text-blue-950 text-sm">{infoLayanan.waktu.deskripsi}</p>
         </div>
 
-        <div className="bg-yellow-200 rounded-2xl p-6">
+        <div className="bg-yellow-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
           <div className="flex items-center gap-2 mb-4">
             <CreditCard size={18} className="text-yellow-900" />
             <h3 className="font-bold text-yellow-900">{infoLayanan.biaya.label}</h3>

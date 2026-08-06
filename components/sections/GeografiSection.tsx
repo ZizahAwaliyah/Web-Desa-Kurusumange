@@ -9,24 +9,24 @@ export default function GeografiSection() {
       </div>
 
       <div className="grid md:grid-cols-[1fr_320px] gap-6">
-        <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-gray-300 to-green-900 h-96 flex items-center justify-center">
+        <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-gray-300 to-green-900 h-96 flex items-center justify-center shadow-sm">
           <span className="bg-white px-4 py-2 rounded-lg text-sm font-medium flex items-center gap-2">
             📍 Peta Administrasi Kurusumange
           </span>
         </div>
 
         <div className="space-y-4">
-          <div className="border rounded-2xl p-5">
+          <div className="bg-white rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow duration-300">
             <p className="text-blue-600 text-xs font-semibold mb-3">STATISTIK LAHAN</p>
             {geografiData.statistikLahan.map((item, i) => (
-              <div key={i} className="flex justify-between py-2 border-b last:border-0 text-sm">
+              <div key={i} className="flex justify-between py-2 border-b border-gray-100 last:border-0 text-sm">
                 <span className="text-gray-500">{item.label}</span>
                 <span className="font-semibold">{item.nilai}</span>
               </div>
             ))}
           </div>
 
-          <div className="border rounded-2xl p-5">
+          <div className="bg-white rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow duration-300">
             <p className="text-blue-600 text-xs font-semibold mb-3">BATAS WILAYAH</p>
             <div className="grid grid-cols-2 gap-4 text-sm">
               <div>

@@ -31,7 +31,7 @@ export default function DeleteBeritaButton({ id, gambarUrl }: { id: number; gamb
     <button
       onClick={handleDelete}
       disabled={loading}
-      className="p-2 border rounded-lg text-red-600 hover:bg-red-50 disabled:opacity-50"
+      className="p-2 rounded-lg text-red-600 bg-red-50 hover:bg-red-100 transition-colors disabled:opacity-50"
     >
       <Trash2 size={14} />
     </button>

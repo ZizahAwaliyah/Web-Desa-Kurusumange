@@ -13,7 +13,7 @@ export default function VisiMisiPpidSection() {
       </div>
 
       <div className="grid md:grid-cols-2 gap-6">
-        <div className="border rounded-2xl p-8 text-center">
+        <div className="bg-white rounded-2xl p-8 text-center shadow-sm hover:shadow-md transition-shadow duration-300">
           <div className="bg-green-800 text-white w-14 h-14 rounded-xl flex items-center justify-center mx-auto mb-4">
             <Eye size={24} />
           </div>
@@ -21,7 +21,7 @@ export default function VisiMisiPpidSection() {
           <p className="text-gray-600 italic">{visiPpid}</p>
         </div>
 
-        <div className="border rounded-2xl p-8">
+        <div className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow duration-300">
           <div className="flex items-center gap-3 mb-5">
             <div className="bg-blue-600 text-white w-10 h-10 rounded-lg flex items-center justify-center">
               <Rocket size={20} />

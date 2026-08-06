@@ -4,9 +4,9 @@ import { FileText, ArrowRight } from 'lucide-react'
 import { useState, useEffect } from 'react'
 
 const backgroundImages = [
-  '/hero-1.jpg',
-  '/hero-2.jpg',
-  '/hero-3.jpg',
+  '/hero1.jpg',
+  '/hero2.jpg',
+  '/hero3.jpg',
 ]
 
 export default function HeroSection() {

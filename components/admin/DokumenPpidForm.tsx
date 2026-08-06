@@ -3,6 +3,9 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
+import FileUpload from '@/components/admin/ui/FileUpload'
+import ErrorAlert from '@/components/admin/ui/ErrorAlert'
+import FormActions from '@/components/admin/ui/FormActions'
 
 const kategoriOptions = ['Berkala', 'Setiap Saat', 'Serta Merta']
 
@@ -30,12 +33,9 @@ export default function DokumenPpidForm({
   const router = useRouter()
   const isEdit = !!initialData
 
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const selected = e.target.files?.[0]
-    if (selected) {
-      setFile(selected)
-      setFileName(selected.name)
-    }
+  const handleFileSelect = (selected: File) => {
+    setFile(selected)
+    setFileName(selected.name)
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -102,7 +102,7 @@ export default function DokumenPpidForm({
   }
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-2xl bg-white border rounded-2xl p-6 space-y-5">
+    <form onSubmit={handleSubmit} className="max-w-2xl mx-auto bg-white rounded-2xl p-8 space-y-6 shadow-sm">
       <div>
         <label className="text-sm font-medium block mb-1.5">Nama Dokumen</label>
         <input
@@ -143,12 +143,12 @@ export default function DokumenPpidForm({
 
       <div>
         <label className="text-sm font-medium block mb-1.5">File Dokumen (PDF)</label>
-        {fileName && <p className="text-sm text-gray-500 mb-2">📄 {fileName}</p>}
-        <input
-          type="file"
+        <FileUpload
           accept="application/pdf"
-          onChange={handleFileChange}
-          className="w-full border rounded-lg px-4 py-2.5 text-sm"
+          kind="file"
+          fileLabel={fileName}
+          onFileSelect={handleFileSelect}
+          hint="Format PDF, maksimal 10MB"
         />
       </div>
 
@@ -162,15 +162,14 @@ export default function DokumenPpidForm({
         <span className="text-sm">Tampilkan juga di halaman Transparansi Anggaran</span>
       </label>
 
-      {error && <p className="text-red-600 text-sm">{error}</p>}
+      {error && <ErrorAlert message={error} />}
 
-      <button
-        type="submit"
-        disabled={loading}
-        className="bg-green-800 text-white font-medium px-6 py-2.5 rounded-lg hover:bg-green-900 disabled:opacity-50"
-      >
-        {loading ? 'Menyimpan...' : isEdit ? 'Simpan Perubahan' : 'Simpan Dokumen'}
-      </button>
+      <FormActions
+        loading={loading}
+        submitLabel={isEdit ? 'Simpan Perubahan' : 'Simpan Dokumen'}
+        loadingLabel="Menyimpan..."
+        cancelHref="/admin/ppid"
+      />
     </form>
   )
 }

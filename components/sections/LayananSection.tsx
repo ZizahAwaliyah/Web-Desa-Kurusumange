@@ -25,7 +25,7 @@ export default function LayananSection() {
           {layananList.map((layanan) => {
             const Icon = iconMap[layanan.icon]
             return (
-              <div key={layanan.nama} className="bg-white border rounded-2xl p-6">
+              <div key={layanan.nama} className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow duration-300">
                 <div className="flex justify-between items-start mb-4">
                   <div className="bg-blue-100 text-blue-700 p-2.5 rounded-xl">
                     <Icon size={20} />
@@ -51,7 +51,7 @@ export default function LayananSection() {
         </div>
 
         {/* Prosedur Pengajuan */}
-        <div className="bg-gradient-to-br from-gray-100 to-blue-50 rounded-3xl p-10 text-center">
+        <div className="bg-gradient-to-br from-gray-100 to-blue-50 rounded-3xl p-10 text-center shadow-sm">
           <h2 className="text-2xl md:text-3xl font-bold mb-2">Prosedur Pengajuan</h2>
           <p className="text-gray-600 mb-10">Ikuti 4 langkah mudah untuk mendapatkan dokumen Anda</p>
 
