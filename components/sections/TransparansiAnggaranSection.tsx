@@ -91,7 +91,7 @@ export default async function TransparansiAnggaranSection() {
                 <div className={`h-2 rounded-full ${program.warna}`} style={{ width: `${program.persen}%` }} />
               </div>
               <p className="text-gray-500 text-xs">
-                Target: {program.target} &nbsp;&nbsp; Aktual: {program.aktual}
+                Aktual: {program.aktual}
               </p>
             </div>
           ))}
