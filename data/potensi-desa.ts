@@ -11,7 +11,7 @@ export const potensiDesa = [
     nama: 'Ubi',
     kategori: 'Pertanian',
     deskripsi: 'Hamparan ubi yang subur dengan metode pertanian modern, menjamin hasil panen yang melimpah.',
-    gambar: '/Kacang Tanah.jpg',
+    gambar: '/Kacang Tanah.JPG',
   },
   {
     id: 3,
@@ -26,7 +26,7 @@ export const potensiDesa = [
     nama: 'Kacang Kacangan',
     kategori: 'Pertanian',
     deskripsi: 'Tanaman kacang-kacangan yang tumbuh subur dengan metode pertanian modern, menjamin hasil panen yang melimpah.',
-    gambar: '/Kacang Tanah.jpg',
+    gambar: '/Kacang Tanah.JPG',
   },
   {
     id: 5,
