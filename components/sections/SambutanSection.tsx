@@ -12,21 +12,19 @@ export default function SambutanSection() {
         <p className="text-gray-500 italic text-sm">Kepala Desa Kurusumange</p>
       </div>
 
-      <div className="flex justify-center relative">
-        <div
-          className="w-full max-w-sm h-[280px] mt-10 overflow-hidden relative" 
-          style={{
-            WebkitMaskImage: 'linear-gradient(to bottom, black 75%, transparent 100%)',
-            maskImage: 'linear-gradient(to bottom, black 75%, transparent 100%)',
-          }}
-        >
-          <img
-            src="/kepala-desa.png"
-            alt="Kepala Desa Kurusumange"
-            className="w-full h-full object-cover object-top scale-125"
-          />
-        </div>
-      </div>
+      <div
+  className="w-full max-w-sm h-[340px] mt-10 overflow-hidden relative"
+  style={{
+    WebkitMaskImage: 'linear-gradient(to bottom, black 75%, transparent 100%)',
+    maskImage: 'linear-gradient(to bottom, black 75%, transparent 100%)',
+  }}
+>
+  <img
+    src="/kepala-desa.png"
+    alt="Kepala Desa Kurusumange"
+    className="w-full h-full object-cover object-top scale-105"
+  />
+</div>
     </section>
   )
 }
