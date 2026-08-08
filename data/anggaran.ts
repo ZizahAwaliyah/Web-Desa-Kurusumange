@@ -1,6 +1,6 @@
 export const anggaranInfo = {
   tahun: 2026,
-  totalAnggaran: 'Rp 2,4 Miliar',
+  totalAnggaran: 'Rp 1,2 Miliar',
   alokasi: [
     { label: 'Pendapatan Desa', sub: 'PAD & Dana Transfer', persen: 60, warna: '#1d4ed8' },
     { label: 'Belanja Desa', sub: 'Operasional & Gaji', persen: 30, warna: '#166534' },
@@ -10,28 +10,34 @@ export const anggaranInfo = {
 
 export const realisasiProgram = [
   {
-    nama: 'Pembangunan Jalan Dusun III',
-    deskripsi: 'Aspal Hotmix sepanjang 1.2 KM',
-    persen: 80,
-    target: 'Rp 450jt',
-    aktual: 'Rp 360jt',
+    nama: 'Penyelenggaraan Pemerintah Desa',
+    persen: 100,
+    aktual: 'Rp 924jt',
     warna: 'bg-blue-700',
   },
   {
-    nama: 'Renovasi Posyandu Mawar',
-    deskripsi: 'Fasilitas kesehatan ibu dan anak',
+    nama: 'Pelaksanaan Pembangunan Desa',
     persen: 100,
-    target: 'Rp 75jt',
-    aktual: 'Rp 75jt',
+    aktual: 'Rp 328jt',
     warna: 'bg-green-800',
   },
   {
-    nama: 'Normalisasi Drainase Utama',
-    deskripsi: 'Pencegahan banjir musim hujan',
-    persen: 60,
-    target: 'Rp 120jt',
-    aktual: 'Rp 72jt',
+    nama: 'Pembinaan Kemasyarakatan Desa',
+    persen: 100,
+    aktual: 'Rp 20jt',
     warna: 'bg-yellow-500',
+  },
+  {
+    nama: 'Pemberdayaan Masyarakat Desa',
+    persen: 100,
+    aktual: 'Rp 8jt',
+    warna: 'bg-pink-500',
+  },
+  {
+    nama: 'Penanggulangan Bencana & Darurat',
+    persen: 0,
+    aktual: 'Rp 0',
+    warna: 'bg-orange-500',
   },
 ]
 
@@ -105,7 +111,7 @@ export const realisasiAnggaranData = {
     {
       id: 3,
       icon: 'Users',
-      nama: 'Pembinaan Kemasyarakatan',
+      nama: 'Pembinaan Kemasyarakatan Desa',
       deskripsi: 'Kegiatan seni, budaya, keagamaan, PKK',
       total: 45955000,
       subProgram: [
@@ -118,7 +124,7 @@ export const realisasiAnggaranData = {
     {
       id: 4,
       icon: 'TrendingUp',
-      nama: 'Pemberdayaan Masyarakat',
+      nama: 'Pemberdayaan Masyarakat Desa',
       deskripsi: 'Pelatihan teknologi, peningkatan kapasitas aparat',
       total: 237184500,
       subProgram: [

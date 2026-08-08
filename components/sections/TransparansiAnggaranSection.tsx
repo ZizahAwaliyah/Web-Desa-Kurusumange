@@ -69,7 +69,6 @@ export default async function TransparansiAnggaranSection() {
               <div className="flex justify-between items-start mb-1">
                 <div>
                   <p className="font-semibold">{program.nama}</p>
-                  <p className="text-gray-500 text-xs">{program.deskripsi}</p>
                 </div>
                 <div className="text-right">
                   <p

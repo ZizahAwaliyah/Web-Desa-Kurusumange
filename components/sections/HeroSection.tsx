@@ -4,7 +4,7 @@ import { FileText, ArrowRight } from 'lucide-react'
 import { useState, useEffect } from 'react'
 
 const backgroundImages = [
-  '/hero1.jpg',
+  '/hero1.webp',
   '/hero2.jpg',
   '/hero3.jpg',
 ]
@@ -39,7 +39,7 @@ export default function HeroSection() {
       {/* Konten (tetap sama, tidak berubah) */}
       <div className="relative z-10">
         <span className="inline-flex items-center gap-2 w-fit bg-white/20 text-white text-xs font-semibold px-4 py-1.5 rounded-full mb-4">
-          🏛️ PORTAL RESMI PEMERINTAH DESA
+          PORTAL RESMI PEMERINTAH DESA
         </span>
 
         <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
@@ -47,7 +47,7 @@ export default function HeroSection() {
         </h1>
 
         <p className="text-white/90 max-w-xl mb-6">
-          Mengembangkan potensi lokal melalui budidaya Ikan Nila dan pertanian modern untuk kesejahteraan seluruh warga desa.
+          Membangun desa yang transparan, maju, dan berdaya melalui pengembangan potensi serta pelayanan untuk kesejahteraan masyarakat.
         </p>
 
         <div className="flex gap-3 mb-10">

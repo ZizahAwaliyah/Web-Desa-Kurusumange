@@ -48,13 +48,13 @@ export const prosedurPengajuan = [
     icon: 'Send',
     nomor: 2,
     judul: 'Pengajuan',
-    deskripsi: 'Pilih jenis layanan dan isi formulir secara online atau di kantor.',
+    deskripsi: 'Pilih jenis layanan dan isi formulir di kantor.',
   },
   {
     icon: 'Settings',
     nomor: 3,
     judul: 'Verifikasi',
-    deskripsi: 'Admin desa akan meninjau data Anda dalam waktu maksimal 24 jam.',
+    deskripsi: 'Admin desa akan meninjau data Anda dalam waktu yang telah disepakati.',
   },
   {
     icon: 'CheckCircle2',

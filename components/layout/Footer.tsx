@@ -30,7 +30,7 @@ export default function Footer() {
             <a href="mailto:dkurusumange@gmail.com" className="bg-gray-100 hover:bg-green-100 hover:text-green-700 p-2.5 rounded-full transition-colors">
               <Mail size={16} />
             </a>
-            <a href="https://wa.me/6281343718765" className="bg-gray-100 hover:bg-green-100 hover:text-green-700 p-2.5 rounded-full transition-colors">
+            <a href="https://wa.me/+6282190441036" className="bg-gray-100 hover:bg-green-100 hover:text-green-700 p-2.5 rounded-full transition-colors">
               <Phone size={16} />
             </a>
           </div>

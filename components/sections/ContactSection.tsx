@@ -24,8 +24,8 @@ export default function ContactSection() {
           <Phone className="text-blue-600 mt-1" size={20} />
           <div>
             <p className="font-semibold">WhatsApp Center</p>
-            <a href="https://wa.me/6281343718765" className="text-blue-600 text-sm">
-              +62 813-4371-8765
+            <a href="https://wa.me/6282190441036" className="text-blue-600 text-sm">
+              +62 821-9044-1036
             </a>
           </div>
         </div>
