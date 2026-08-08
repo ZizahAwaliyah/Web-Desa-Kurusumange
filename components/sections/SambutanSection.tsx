@@ -1,6 +1,6 @@
 export default function SambutanSection() {
   return (
-    <section className="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-10 items-center">
+    <section className="max-w-7xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-10 items-start">
       <div>
         <h2 className="text-3xl font-bold text-green-700 mb-4">
           Website Desa Kurusumange Untuk Semua
@@ -12,21 +12,21 @@ export default function SambutanSection() {
         <p className="text-gray-500 italic text-sm">Kepala Desa Kurusumange</p>
       </div>
 
-     <div className="flex justify-center relative">
-  <div
-    className="w-full max-w-sm h-[420px]"
-    style={{
-      WebkitMaskImage: 'linear-gradient(to bottom, black 75%, transparent 100%)',
-      maskImage: 'linear-gradient(to bottom, black 75%, transparent 100%)',
-    }}
-  >
-    <img
-      src="/kepala-desa.png"
-      alt="Kepala Desa Kurusumange"
-      className="w-full h-full object-contain object-bottom"
-    />
-  </div>
-</div>
+      <div className="flex justify-center relative">
+        <div
+          className="w-full max-w-sm h-[280px] mt-10 overflow-hidden relative" 
+          style={{
+            WebkitMaskImage: 'linear-gradient(to bottom, black 75%, transparent 100%)',
+            maskImage: 'linear-gradient(to bottom, black 75%, transparent 100%)',
+          }}
+        >
+          <img
+            src="/kepala-desa.png"
+            alt="Kepala Desa Kurusumange"
+            className="w-full h-full object-cover object-top scale-125"
+          />
+        </div>
+      </div>
     </section>
   )
 }
