@@ -18,7 +18,7 @@ export const perangkatDesa = [
 
 export const kepalaDusun = [
   { nama: 'MUH RAMLI', jabatan: 'KADUS MAJANNANG', foto: '/dusun1.jpeg' },
-  { nama: 'ALIF ALAMSYAH', jabatan: 'KADUS PANASAKKANG', foto: '/dusun2.jpeg' },
+  { nama: 'ALIF ALAMSYAH', jabatan: 'KADUS PANASAKKANG', foto: '/dusun2.jpg' },
   { nama: 'HAMSAH', jabatan: 'KADUS BIRA-BIRA', foto: '/dusun3.jpg' },
   { nama: 'ABD. ASIS DG. NGALLE', jabatan: 'KADUS BONTO BIRA', foto: '/dusun4.jpg' },
   { nama: 'SYARIFUDDIN', jabatan: 'KADUS KA`BUNG', foto: '/dusun5.jpeg' },
