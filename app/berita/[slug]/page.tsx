@@ -57,8 +57,12 @@ export default async function DetailBeritaPage({
       <h1 className="text-3xl font-bold mb-6">{berita.judul}</h1>
 
       {berita.gambar_url && (
-        <img src={berita.gambar_url} alt={berita.judul} className="w-full h-32 object-cover group-hover:scale-105 transition-transform duration-300" />
-      )}
+  <img
+    src={berita.gambar_url}
+    alt={berita.judul}
+    className="w-full max-h-[450px] object-cover rounded-2xl mb-8"
+  />
+)}
 
       <div className="prose max-w-none text-gray-700 space-y-4 mb-10">
         {paragraf.map((p: string, i: number) => (
