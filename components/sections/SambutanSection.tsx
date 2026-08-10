@@ -13,7 +13,7 @@ export default function SambutanSection() {
       </div>
 
       <div
-  className="w-full max-w-sm h-[340px] -mt-8 overflow-hidden relative"
+  className="w-full max-w-sm h-[340px] -mt-8 md:ml-auto overflow-hidden relative"
   style={{
     WebkitMaskImage: 'linear-gradient(to bottom, black 75%, transparent 100%)',
     maskImage: 'linear-gradient(to bottom, black 75%, transparent 100%)',
